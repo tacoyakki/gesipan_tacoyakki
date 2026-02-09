@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>게시글 상세</title>
+    <link rel="stylesheet" href="/css/tacoboard.css">
+</head>
+<body>
+<div class="page-wrapper">
+    <div class="board-container">
+        <h1>게시글 상세</h1>
+
+        <div class="post-title" th:text="${tacoBoard.title}">제목</div>
+        <div class="post-date"
+             th:text="${#temporals.format(tacoBoard.createdAt, 'yyyy-MM-dd')}">
+            날짜
+        </div>
+
+        <!-- ✅ content 정확 -->
+        <div class="post-content"
+             th:text="${tacoBoard.content}">
+            내용
+        </div>
+
+        <div class="button-group">
+            <a class="btn btn-primary" href="/tacoboard/list">목록</a>
+
+            <a class="btn btn-secondary"
+               th:href="@{/tacoboard/{id}/edit(id=${tacoBoard.id})}">
+                수정
+            </a>
+
+            <!-- ❗ 반드시 POST -->
+            <form th:action="@{/tacoboard/{id}/delete(id=${tacoBoard.id})}"
+                  method="post" style="display:inline;">
+                <button type="submit" class="btn btn-danger">삭제</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

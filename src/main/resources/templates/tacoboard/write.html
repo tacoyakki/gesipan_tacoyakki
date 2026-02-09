@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>글 작성</title>
+
+    <!-- ✅ 정답 CSS 링크 -->
+    <link rel="stylesheet" href="/css/tacoboard.css">
+</head>
+<body>
+<div class="page-wrapper">
+    <div class="board-container">
+        <h1>글 작성</h1>
+
+        <!-- ✅ POST /tacoboard/write -->
+        <form action="/tacoboard/write" method="post">
+
+            <input
+                    type="text"
+                    name="title"
+                    placeholder="제목을 입력하세요"
+                    required
+            >
+
+            <textarea
+                    name="content"
+                    placeholder="내용을 입력하세요"
+                    rows="10"
+                    required
+            ></textarea>
+
+            <div class="button-group">
+                <button type="submit" class="btn btn-primary">등록</button>
+                <a href="/tacoboard/list" class="btn btn-secondary">취소</a>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
