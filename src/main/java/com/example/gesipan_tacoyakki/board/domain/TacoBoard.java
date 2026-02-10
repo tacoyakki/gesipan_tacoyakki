@@ -1,4 +1,4 @@
-package com.example.gesipan_tacoyakki.domain;
+package com.example.gesipan_tacoyakki.board.domain.domain;
 
 import jakarta.persistence.*;
 import lombok.Getter;

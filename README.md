@@ -1,1 +1,0 @@
-# gesipan_tacoyakki
